@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Simulation</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <style>
+    .bt{
+        border: 2px solid #7386d5;
+        padding: 7px;
+        border-radius: 15px;
+        background-color:white;
+        margin-left: 5px;
+        margin-right: 5px;
+        
+    }
+    div{
+      margin-left: 30%;
+    }
+    
+  </style>
+</head>
+<body>
+   <center><h2>Simulator</h2></center>
+    
+ 
+    <hr>
+ <br>
+ <div><p> <b>Instructions to enter plain-text:</b>
+  <li> Default bit-stream is specified but you can modify it and enter your custom bit stream.</li>
+  <li> The max size of input bit-stream is 16-bit.</li>
+</p>
+<p> <strong>Plaintext: </strong>
+<br><br>
+<textarea name="p" id="p" maxchars="16" cols="16" rows="1">10010011000110</textarea>
+<br>
+</p>
+<p> <b>Instructions to enter key-value:</b>
+<li> Default key value is specified but you can modify it and enter your custom value stream.</li>
+<li> The max size of key value is 16-bit.</li>
+<li> The length of key value should be equal to the input plain-text bits.</li>
+</p>
+<p>
+<strong>key:</strong><br><br> <input id="key" maxchars="16" size="16" type="text" value="10101100110001">
+     <input type="button" class="bt" name="genkey" onclick="Vernam_RandKey()" type="button" value="Generate Random Key">
+</p>
+<p>
+  <input type="button" class="bt" name="btnEn" onclick=" Vernam_Encrypt()" value="v Encrypt v">
+  <input type="button" class="bt" name="btnDe" onclick=" Vernam_Decrypt()" value="^ Decrypt ^">
+</p>
+<p>To generate the cipher-text press encrypt button.</p>
+<p>
+<strong>Ciphertext:</strong>
+<br><br>
+<textarea name="c" id="c" cols="50" rows="2"></textarea>
+<br>
+</p>
+<p><b>Instructions to obtain plain-text from the cipher text:</b></p>
+<li>Remove the plain-text value from the input field and press the decrypt button.</li>
+<li>The resulting plain-text after decryption will be generated in the input field. </li>
+<br></div>
+ 
+ 
+ 
+<script src="vernam.js"></script>
+ 
+ 
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Simulation</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <style>
+    .bt{
+        border: 2px solid #7386d5;
+        padding: 7px;
+        border-radius: 15px;
+        background-color:white;
+        margin-left: 5px;
+        margin-right: 5px;
+        
+    }
+    .content{
+        font-size: 15px;
+        margin-left: 10%;
+    }
+  
+    
+  </style>
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <!-- Our Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome JS -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+
+        <nav id="sidebar">
+          
+            <ul class="list-unstyled components">
+               
+                <li class="active">
+                    <a href="index.html">Aim</a>
+                   
+                </li>
+                <li>
+                    <a href="theory.html">Theory</a>
+                </li>
+
+                <li>
+                    <a href="procedure.html">procedure</a>
+                </li>
+                <li>
+                    <a href="simulation2.html">Simulation</a>
+                </li>
+                
+            </ul>
+
+          
+        </nav>
+        <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-default">
+                    <i class="fas fa-align-left"></i>
+                    
+                </button>
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-align-justify"></i>
+                </button>
+            </br>
+                <!-- <img src="2.jpg"  alt="" height="50" width="110"> -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="home.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">CONTACT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">ABOUT</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            
+        </nav>
+        <div class="content">
+            <center><h2>Simulator</h2></center>
+             <hr>
+         <br><p> <b>Instructions to enter plain-text:</b>
+          <li> Default bit-stream is specified but you can modify it and enter your custom bit stream.</li>
+          <li> The max size of input bit-stream is 16-bit.</li>
+        </p>
+        <p> <strong>Plaintext: </strong>
+        <br><br>
+        <textarea name="p" id="p" maxchars="16" cols="16" rows="1">10010011000110</textarea>
+        <br>
+        </p>
+        <p> <b>Instructions to enter key-value:</b>
+        <li> Default key value is specified but you can modify it and enter your custom value stream.</li>
+        <li> The max size of key value is 16-bit.</li>
+        <li> The length of key value should be equal to the input plain-text bits.</li>
+        </p>
+        <p>
+        <strong>key:</strong><br><br> <input id="key" maxchars="16" size="16" type="text" value="10101100110001">
+             <input type="button" class="bt" name="genkey" onclick="Vernam_RandKey()" type="button" value="Generate Random Key">
+        </p>
+        <p>
+          <input type="button" class="bt" name="btnEn" onclick=" Vernam_Encrypt()" value="v Encrypt v">
+          <input type="button" class="bt" name="btnDe" onclick=" Vernam_Decrypt()" value="^ Decrypt ^">
+        </p>
+        <p>To generate the cipher-text press encrypt button.</p>
+        <p>
+        <strong>Ciphertext:</strong>
+        <br><br>
+        <textarea name="c" id="c" cols="50" rows="2"></textarea>
+        <br>
+        </p>
+        <p><b>Instructions to obtain plain-text from the cipher text:</b></p>
+        <li>Remove the plain-text value from the input field and press the decrypt button.</li>
+        <li>The resulting plain-text after decryption will be generated in the input field. </li>
+        <br></div>
+         
+            </div>
+        
+        
+    </div>
+   
+ 
+ 
+ 
+<script src="vernam.js"></script>
+ 
+ 
+</body>
+</html>
